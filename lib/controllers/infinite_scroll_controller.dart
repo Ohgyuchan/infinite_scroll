@@ -23,10 +23,10 @@ class InfiniteScrollController extends GetxController {
     isLoading.value = true;
     await Future.delayed(Duration(seconds: 2));
     int offset = data.length;
-    var appendData = List<int>.generate(10, (i) => i + 1 + offset);
+    var appendData = List<int>.generate(8, (i) => i + 1 + offset);
     data.addAll(appendData);
     isLoading.value = false;
-    hasMore.value = data.length < 30;
+    hasMore.value = data.length < 100;
   }
 
   reload() async {
