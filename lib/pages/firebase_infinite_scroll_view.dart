@@ -22,34 +22,34 @@ class _InfiniteGridExampleState extends State<InfiniteGridExample> {
       appBar: AppBar(
         title: Text('Infinite grid'),
       ),
-      body: InfiniteGridView(
-        gridDelegate:
-            SliverGridDelegateWithFixedCrossAxisCount(crossAxisCount: 3),
-        scrollDirection: Axis.horizontal,
-        itemBuilder: (context, index) {
-          return Padding(
-            padding: const EdgeInsets.all(4.0),
-            child: Container(
-              color: Colors.grey,
-              child: Center(
-                child: Padding(
-                  padding: const EdgeInsets.all(12.0),
+      body: Container(
+        height: 250,
+        child: InfiniteGridView(
+          gridDelegate:
+              SliverGridDelegateWithFixedCrossAxisCount(crossAxisCount: 2),
+          scrollDirection: Axis.horizontal,
+          itemBuilder: (context, index) {
+            return AspectRatio(
+              aspectRatio: 0.5,
+              child: Card(
+                color: Colors.red,
+                child: Center(
                   child: Text('$index', style: TextStyle(color: Colors.white)),
                 ),
               ),
-            ),
-          );
-        },
-        itemCount: _data.length,
-        hasNext: _data.length < 200,
-        nextData: this.loadNextData,
+            );
+          },
+          itemCount: _data.length,
+          hasNext: _data.length < 200,
+          nextData: this.loadNextData,
+        ),
       ),
     );
   }
 
   loadNextData() {
     final initialIndex = _data.length;
-    final finalIndex = _data.length + 10;
+    final finalIndex = _data.length + 6;
     print('load data from ${_data.length}');
 
     Future.delayed(Duration(seconds: 3), () {
