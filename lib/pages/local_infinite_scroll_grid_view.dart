@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:infinite_widgets/infinite_widgets.dart';
 
 class InfiniteGridExample extends StatefulWidget {
+  const InfiniteGridExample({Key? key}) : super(key: key);
+
   @override
   State<StatefulWidget> createState() {
     return _InfiniteGridExampleState();
@@ -30,7 +32,7 @@ class _InfiniteGridExampleState extends State<InfiniteGridExample> {
           scrollDirection: Axis.horizontal,
           itemBuilder: (context, index) {
             return AspectRatio(
-              aspectRatio: 0.5,
+              aspectRatio: 1,
               child: Card(
                 color: Colors.red,
                 child: Center(
