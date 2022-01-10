@@ -2,12 +2,12 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:infinite_scroll/controllers/infinite_scroll_controller.dart';
 
-class InfiniteScrollView extends GetView<InfiniteScrollController> {
+class FirebaseInfiniteScrollView extends GetView<InfiniteScrollController> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Infinite Scroll'),
+        title: Text('Firebase Infinite Scroll'),
       ),
       body: Obx(
         () => Padding(
