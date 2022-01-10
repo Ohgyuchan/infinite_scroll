@@ -26,7 +26,7 @@ class HomePage extends StatelessWidget {
           Center(
             child: ElevatedButton(
               onPressed: () {
-                Get.to(() => FirebaseInfiniteScrollView());
+                Get.to(() => InfiniteGridExample());
               },
               child: Text('Firebase Infinite Scroll View'),
             ),
